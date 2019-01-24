@@ -13,6 +13,8 @@
 // | 模板设置
 // +----------------------------------------------------------------------
 
+//Type Think
+/*
 return [
     // 模板引擎类型 支持 php think 支持扩展
     'type'         => 'Think',
@@ -32,4 +34,25 @@ return [
     'taglib_begin' => '{',
     // 标签库标签结束标记
     'taglib_end'   => '}',
+];
+*/
+
+// Type Blade
+return [
+    // 模板引擎类型 支持 php think 支持扩展
+    'type' => 'Blade',
+    // 视图基础目录（集中式）
+    'view_base' => Env::get('ROOT_PATH') . 'resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR,
+    // 模板起始路径
+    'view_path' => Env::get('ROOT_PATH') . 'resources' . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR,
+    // 模板文件名分隔符
+    'view_depr' => DIRECTORY_SEPARATOR,
+    // 模板缓存目录
+    'view_cache_path' => Env::get('RUNTIME_PATH') . 'temp' . DIRECTORY_SEPARATOR,
+    // 模板文件后缀
+    'view_suffix' => 'blade.php',
+    'cache' => [
+        'cache_subdir' => false,
+        'prefix' => '',
+    ],
 ];
